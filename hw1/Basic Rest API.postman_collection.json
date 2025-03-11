@@ -1,0 +1,509 @@
+{
+	"info": {
+		"_postman_id": "8889b64f-c377-402f-8b8f-6f8bb50d3aef",
+		"name": "Basic Rest API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "42682416"
+	},
+	"item": [
+		{
+			"name": "get all",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id Not Found",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/123456789012345678901234",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"123456789012345678901234"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get by id invalid id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/abcde",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"abcde"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get wrong path",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post books / id Conflict",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"new book\",\r\n    \"author\": \"new author\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"New Genre\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post books",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"new book\",\r\n    \"author\": \"new author\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"New Genre\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "post bad path",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"new book\",\r\n    \"author\": \"new author\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"New Genre\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"cartea smecheriei\",\r\n    \"author\": \"intache grigorcea\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"Life\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book id bad request (missing field)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"cartea smecheriei\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"Life\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a144",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a144"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book id not found",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"cartea smecheriei\",\r\n    \"author\": \"intache grigorcea\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"Life\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a149",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a149"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book id invalid id",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"cartea smecheriei\",\r\n    \"author\": \"intache grigorcea\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"Life\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books/abcde",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"abcde"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update book bad path",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\": \"cartea smecheriei\",\r\n    \"author\": \"intache grigorcea\",\r\n    \"year_published\": 2025,\r\n    \"genre\": \"Life\",\r\n    \"pages\": 100\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update books (replace)",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  {\r\n    \"_id\": \"67cad34f7ae6c2d4ee46a140\",\r\n    \"title\": \"The Great Gatsby2222222222222222\",\r\n    \"author\": \"F. Scott Fitzgerald\",\r\n    \"year_published\": 1925,\r\n    \"genre\": \"Fiction\",\r\n    \"pages\": 180\r\n  },\r\n  {\r\n    \"_id\": \"67cad34f7ae6c2d4ee46a143\",\r\n    \"title\": \"The Hobbit2222222222222222222222\",\r\n    \"author\": \"J.R.R. Tolkien\",\r\n    \"year_published\": 1937,\r\n    \"genre\": \"Fantasy\",\r\n    \"pages\": 310\r\n  },\r\n  {\r\n    \"_id\": \"67cad34f7ae6c2d4ee46a145\",\r\n    \"title\": \"Brave New World\",\r\n    \"author\": \"Aldous Huxley\",\r\n    \"year_published\": 1932,\r\n    \"genre\": \"Dystopian\",\r\n    \"pages\": 311\r\n  },\r\n  {\r\n    \"_id\": \"67cad34f7ae6c2d4ee46a146\",\r\n    \"title\": \"Moby-Dick\",\r\n    \"author\": \"Herman Melville\",\r\n    \"year_published\": 1851,\r\n    \"genre\": \"Adventure\",\r\n    \"pages\": 585\r\n  },\r\n  {\r\n    \"_id\": \"67cad34f7ae6c2d4ee46a147\",\r\n    \"title\": \"Pride and Prejudice\",\r\n    \"author\": \"Jane Austen\",\r\n    \"year_published\": 1813,\r\n    \"genre\": \"Romance\",\r\n    \"pages\": 279\r\n  }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/67cad34f7ae6c2d4ee46a143",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"67cad34f7ae6c2d4ee46a143"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete by id invalid id",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books/abcde",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books",
+						"abcde"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete bad path",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete all",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/books",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"books"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
