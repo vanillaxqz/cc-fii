@@ -1,0 +1,112 @@
+@import url('https://fonts.googleapis.com/css2?family=Afacad+Flux:wght@100..1000&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    background-color: #3E9A7B;
+    font-family: 'Afacad Flux', cursive;
+}
+
+.header {
+    background-color: #f8f8f8;
+    text-align: left;
+    padding: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* Main content wrapper */
+.main-content {
+    padding: 40px 0 80px 0;
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.book-card {
+    background: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    max-width: 800px;
+    width: 100%;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.book-card mat-card-title {
+    font-size: 1.8rem;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.book-card mat-card-subtitle {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #555;
+    font-size: 1.5rem;
+}
+
+.book-card p {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+}
+
+button.back-btn {
+    background-color: rgb(0, 132, 255) !important;
+    color: white !important;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+button.update-btn {
+    background-color: #ffc107 !important;
+    color: #333 !important;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button.delete-btn {
+    margin-left: 10px;
+    background-color: #dc3545 !important;
+    color: #fff !important;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.footer {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.error-message {
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    padding: 10px;
+    border-radius: 4px;
+    margin: 20px auto;
+    text-align: center;
+    max-width: 600px;
+}

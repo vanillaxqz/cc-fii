@@ -1,0 +1,30 @@
+<div class="header">
+    <button mat-button class="back-btn" (click)="goBack()">Back</button>
+</div>
+
+<div class="main-content">
+    <mat-card *ngIf="book" class="book-card">
+        <mat-card-title>{{ book.title }}</mat-card-title>
+        <mat-card-subtitle>by {{ book.author }}</mat-card-subtitle>
+        <mat-card-content>
+            <p><strong>Year Published:</strong> {{ book.year_published }}</p>
+            <p><strong>Genre:</strong> {{ book.genre }}</p>
+            <p><strong>Pages:</strong> {{ book.pages }}</p>
+            <p><strong>Summary:</strong> {{ book.summary }}</p>
+            <p><strong>About the Author:</strong></p>
+            <div [innerHTML]="book.author_info"></div>
+        </mat-card-content>
+        <mat-card-actions>
+            <button mat-button class="update-btn" (click)="updateBook()">Update</button>
+            <button mat-button class="delete-btn" (click)="deleteBook()">Delete</button>
+        </mat-card-actions>
+    </mat-card>
+
+    <div *ngIf="errorMessage" class="error-message">
+        {{ errorMessage }}
+    </div>
+</div>
+
+<div class="footer">
+    <p>&copy; 2025 - The Library</p>
+</div>

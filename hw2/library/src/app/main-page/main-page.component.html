@@ -1,0 +1,41 @@
+<head>
+    <!-- Add meta tags, title, etc., as needed -->
+    <title>The Library</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
+</head>
+<header class="header">
+    <h1>Welcome to the Library</h1>
+</header>
+
+<main class="main-content">
+    <div class="container">
+        <h2>Books List</h2>
+
+        <!-- Action Buttons with specific classes for colors -->
+        <div class="action-buttons">
+            <button class="action-btn new-btn" (click)="createBook()">New</button>
+            <button class="action-btn update-btn" (click)="updateBook()">Update</button>
+            <button class="action-btn delete-btn" (click)="deleteBook()">Delete</button>
+        </div>
+
+        <!-- Error Message Display -->
+        <div *ngIf="errorMessage" class="error">
+            {{ errorMessage }}
+        </div>
+
+        <!-- Books List -->
+        <div class="books">
+            <div *ngFor="let book of books" class="book-card">
+                <div class="book-info">
+                    <div class="book-title">{{ book.title }}</div>
+                    <div class="book-author">by {{ book.author }}</div>
+                </div>
+                <button class="view-btn" (click)="viewBook(book)">View</button>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <p>&copy; 2025 - The Library</p>
+</footer>
