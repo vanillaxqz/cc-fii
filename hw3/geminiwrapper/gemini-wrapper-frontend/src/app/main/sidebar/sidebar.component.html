@@ -1,0 +1,10 @@
+<div class="sidebar">
+    <h3>Your Mood History</h3>
+    <ul>
+        <li *ngFor="let moodEntry of moods">
+            <a href="#" (click)="openMood(moodEntry)">
+                {{ moodEntry.mood }} - {{ moodEntry.timestamp | date:'short' }}
+            </a>
+        </li>
+    </ul>
+</div>

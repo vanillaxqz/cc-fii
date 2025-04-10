@@ -1,0 +1,18 @@
+<app-header></app-header>
+<div class="chat-container">
+    <div class="chat-body">
+        <app-sidebar></app-sidebar>
+        <div class="chat-main">
+            <div class="chat-messages" #scrollContainer>
+                <div *ngFor="let msg of messages" class="message">
+                    <strong>{{ msg.sender }}:</strong> {{ msg.content }}
+                    <span class="timestamp">{{ msg.timestamp | date:'shortTime' }}</span>
+                </div>
+            </div>
+            <div class="chat-input">
+                <input type="text" placeholder="Type your message..." [(ngModel)]="newMessage">
+                <button (click)="sendMessage()">Send</button>
+            </div>
+        </div>
+    </div>
+</div>

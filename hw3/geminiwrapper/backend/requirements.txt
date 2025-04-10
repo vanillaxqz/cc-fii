@@ -1,0 +1,11 @@
+Flask
+flask-cors
+flask-jwt-extended
+flask-sqlalchemy
+psycopg2-binary
+google-cloud-firestore
+google-cloud-secret-manager
+google-cloud-language
+werkzeug
+requests
+gunicorn==23.0.0

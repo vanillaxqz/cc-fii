@@ -1,0 +1,11 @@
+service: frontend
+runtime: python39 
+
+handlers:
+  - url: /(.*\.(css|js|png|jpg|jpeg|gif|svg|ico))
+    static_files: dist/gemini-wrapper-frontend/browser/\1
+    upload: dist/gemini-wrapper-frontend/browser/.*\.(css|js|png|jpg|jpeg|gif|svg|ico)
+
+  - url: /.*
+    static_files: dist/gemini-wrapper-frontend/browser/index.html
+    upload: dist/gemini-wrapper-frontend/browser/index.html
